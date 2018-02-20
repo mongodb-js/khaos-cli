@@ -1,26 +1,39 @@
 {
   "name": "{{slugcase name}}",
   "description": "{{description}}",
+  "author": "{{author}}",
   "version": "0.0.0",
   "scripts": {
-    "fmt": "mongodb-js-fmt",
-    "check": "mongodb-js-precommit",
+    "check": "jshint",
     "test": "mocha",
     "ci": "npm run check && npm test"
   },
-  "homepage": "http://github.com/mongodb-js/{{slugcase name}}",
+  "bin": {
+    "{{slugcase name}}": "./bin/{{slugcase name}}.js"
+  },
+  "homepage": "http://mongodb-js.github.io/{{slugcase name}}",
   "repository": {
     "type": "git",
     "url": "git://github.com/mongodb-js/{{slugcase name}}.git"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint-config-mongodb-js": "^1.0.6",
-    "mocha": "^2.3.4",
-    "mongodb-js-fmt": "^0.0.3",
-    "mongodb-js-precommit": "^0.2.8",
-    "pre-commit": "^1.1.2"
+  "bugs": {
+    "url": "git://github.com/mongodb-js/{{slugcase name}}.git/issues"
   },
+  "dependencies": {
+    "async": "^1.2.1",
+    "clui": "^0.3.1",
+    "cli-color": "^1.0.0",
+    "debug": "^2.2.0",
+    "docopt": "^0.6.2",
+    "lodash": "^3.9.3"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.3",
+    "mocha": "^2.2.1",
+    "pre-commit": "^1.0.6",
+    "which": "^1.1.1"
+  },
+  "preferGlobal": true,
   "license": "Apache-2.0",
   "precommit": [
     "check"
